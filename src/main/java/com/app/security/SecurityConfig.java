@@ -81,16 +81,13 @@ public class SecurityConfig {
 
         config.setAllowCredentials(true);
 
-        // 🔥 Allowed Frontend URLs
         config.setAllowedOrigins(List.of(
-                "http://localhost:3",
                 "http://localhost:5173",
                 "https://your-frontend.vercel.app"
         ));
 
         config.setAllowedHeaders(List.of("*"));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-
         config.setExposedHeaders(List.of("Authorization"));
 
         UrlBasedCorsConfigurationSource source =
