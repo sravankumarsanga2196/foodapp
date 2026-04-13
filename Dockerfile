@@ -1,14 +1,14 @@
-# Use Java 17 base image
-FROM openjdk:17-jdk-slim
+# ✅ Use working Java 17 image
+FROM eclipse-temurin:17-jdk-jammy
 
 # Set working directory
 WORKDIR /app
 
-# Copy JAR file from target folder
+# Copy jar file
 COPY target/*.jar app.jar
 
-# Expose port (Spring Boot default)
+# Expose port
 EXPOSE 8081
 
-# Run the application
+# Run app
 ENTRYPOINT ["java", "-jar", "app.jar"]
